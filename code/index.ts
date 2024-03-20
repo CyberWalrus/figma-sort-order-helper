@@ -1,7 +1,10 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+import { SortElementSchema } from './schemas';
+
 figma.showUI(__html__, { height: 500, width: 400 });
 
-figma.ui.onmessage = (msg) => {
+figma.ui.onmessage = (msgAny) => {
+    const msg = SortElementSchema.parse(msgAny);
+
     if (msg.type === 'sort-elements') {
         const { elementsPerRow, horizontalPadding, verticalPadding } = msg.options;
         const { selection } = figma.currentPage;
