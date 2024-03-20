@@ -1,3 +1,3 @@
 module.exports = {
-    extends: ['@cyber-walrus'],
+    extends: ['@cyber-walrus', 'plugin:@figma/figma-plugins/recommended'],
 };

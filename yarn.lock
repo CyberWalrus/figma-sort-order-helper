@@ -1364,6 +1364,20 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.57.0.tgz#a5417ae8427873f1dd08b70b3574b453e67b5f7f"
   integrity sha512-Ys+3g2TaW7gADOJzPt83SJtCDhMjndcDMFVQ/Tj9iA1BfJzFKD9mAUXT3OenpuPHbI6P/myECxRJrofUsDx/5g==
 
+"@figma/eslint-plugin-figma-plugins@0.15.0":
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/@figma/eslint-plugin-figma-plugins/-/eslint-plugin-figma-plugins-0.15.0.tgz#66acadd82865d7f132acbcf0cf6058fe2b258df2"
+  integrity sha512-ol/v6qje8sxE2npvjCbOQUGlTx++RdYcq98jKaNokL/qN1IF7Y6Y7jgj2wiAYmT2V+aABvtX7MNtKKJ2fbcfWA==
+  dependencies:
+    "@typescript-eslint/typescript-estree" "^6.13.2"
+    "@typescript-eslint/utils" "^6.12.0"
+    typescript "^5.3.2"
+
+"@figma/plugin-typings@1.88.0":
+  version "1.88.0"
+  resolved "https://registry.yarnpkg.com/@figma/plugin-typings/-/plugin-typings-1.88.0.tgz#a4bd09217c0d0655ee1e799c3cb15fbb20d7c294"
+  integrity sha512-ly9amJtPqlR48FZB0iKfyeCSo4O0QJhOfX+YYS/xEq0zoJzNETJLLQ43k93BS2W/N/BOVzgEjyAvC1WeuwFbdA==
+
 "@greenly/stylelint-config-rational-order@0.2.1":
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/@greenly/stylelint-config-rational-order/-/stylelint-config-rational-order-0.2.1.tgz#10d795346fbb93a6f99373b69ca5a28f7af08820"
@@ -1936,7 +1950,7 @@
     semver "^7.3.7"
     tsutils "^3.21.0"
 
-"@typescript-eslint/typescript-estree@6.21.0":
+"@typescript-eslint/typescript-estree@6.21.0", "@typescript-eslint/typescript-estree@^6.13.2":
   version "6.21.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/typescript-estree/-/typescript-estree-6.21.0.tgz#c47ae7901db3b8bddc3ecd73daff2d0895688c46"
   integrity sha512-6npJTkZcO+y2/kr+z0hc4HwNfrrP4kNYh57ek7yCNlrBjWQ1Y0OS7jiZTkgumrvkX5HkEKXFZkkdFNkaW2wmUQ==
@@ -1991,7 +2005,7 @@
     "@typescript-eslint/typescript-estree" "7.1.1"
     semver "^7.5.4"
 
-"@typescript-eslint/utils@^6.20.0":
+"@typescript-eslint/utils@^6.12.0", "@typescript-eslint/utils@^6.20.0":
   version "6.21.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/utils/-/utils-6.21.0.tgz#4714e7a6b39e773c1c8e97ec587f520840cd8134"
   integrity sha512-NfWVaC8HP9T8cbKQxHcsJBY5YE1O33+jpMwN45qzWWaPDZgLIbo12toGMWnmhvCpd3sIxkpDw3Wv1B3dYrbDQQ==
@@ -7189,7 +7203,7 @@ typescript-plugin-css-modules@5.1.0:
     stylus "^0.62.0"
     tsconfig-paths "^4.2.0"
 
-typescript@5.4.2:
+typescript@5.4.2, typescript@^5.3.2:
   version "5.4.2"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.4.2.tgz#0ae9cebcfae970718474fe0da2c090cad6577372"
   integrity sha512-+2/g0Fds1ERlP6JsakQQDXjZdZMM+rqpamFZJEKh4kwTIn3iDkgKtby0CeNd5ATNZ4Ry1ax15TMx0W2V+miizQ==
