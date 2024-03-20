@@ -35,4 +35,5 @@ __screenshots-current__
 __screenshots-dif__
 .VSCodeCounter
 coverage
-ui.html
+/ui.html
+/code.js

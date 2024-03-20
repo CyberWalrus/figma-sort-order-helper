@@ -26,7 +26,8 @@
         "*.config.js",
         "*.config.cjs",
         "*.config.ts",
-        "__mocks__"
+        "__mocks__",
+        "code"
     ],
     "exclude": [
         "node_modules"
