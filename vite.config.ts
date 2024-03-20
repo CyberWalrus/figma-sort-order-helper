@@ -3,12 +3,11 @@ import dotenv from 'dotenv';
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
 import { viteSingleFile } from 'vite-plugin-singlefile';
+import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 import { envBuild } from './src/shared/api/env-build';
 
 dotenv.config();
-
-const baseUrl = '/';
 
 export default defineConfig({
     css: {
@@ -22,12 +21,13 @@ export default defineConfig({
         NODE_ENV: JSON.stringify(envBuild.NODE_ENV),
         VITE_TEST_SERVER_BUILD: JSON.stringify(envBuild.VITE_TEST_SERVER_BUILD),
     },
-    experimental: {
-        renderBuiltUrl(filename: string) {
-            return `${baseUrl}${filename}`;
-        },
-    },
-    plugins: [react(), viteSingleFile()],
+    plugins: [
+        react(),
+        viteSingleFile(),
+        viteStaticCopy({
+            targets: [{ dest: '../', rename: 'ui.html', src: './dist/index.html' }],
+        }),
+    ],
     resolve: {
         alias: {
             $__mocks__: resolve(__dirname, './src/__mocks__'),
