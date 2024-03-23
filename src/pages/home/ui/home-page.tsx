@@ -1,11 +1,13 @@
 import type { FC } from 'react';
 
-import { SortElements } from '$features/sort-elements';
+import { Screens } from '$widgets/screens';
+import { ScreenSwitcher } from '$features/screen-switcher';
 
 import styles from './home-page.module.scss';
 
 export const HomePage: FC = () => (
     <div className={styles.container}>
-        <SortElements />
+        <ScreenSwitcher />
+        <Screens />
     </div>
 );
