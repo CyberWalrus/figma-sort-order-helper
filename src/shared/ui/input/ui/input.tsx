@@ -4,23 +4,23 @@ import type { InputProps } from './input.type';
 
 import styles from './input.module.scss';
 
-export const Input: FC<InputProps> = ({ error, ...props }) => {
+export const Input: FC<InputProps> = ({ error, wrapperClassName, title, errorMessage, ...props }) => {
     const elementId = useId();
 
     return (
-        <section>
+        <section className={wrapperClassName}>
             <label
                 className={styles.label}
                 htmlFor={elementId}
             >
-                Elements per Row:
+                {title}
             </label>
             <input
                 className={styles.input}
                 id={elementId}
                 {...props}
             />
-            {error && <span className={styles.error}>This field is required</span>}
+            {error && errorMessage && <span className={styles.error}>{errorMessage}</span>}
         </section>
     );
 };

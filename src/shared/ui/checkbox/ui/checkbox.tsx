@@ -1,14 +1,15 @@
 import { type FC, useId } from 'react';
+import { clsx } from 'clsx';
 
 import type { CheckBoxProps } from './checkbox.type';
 
 import styles from './checkbox.module.scss';
 
-export const Checkbox: FC<CheckBoxProps> = ({ error, ...props }) => {
+export const Checkbox: FC<CheckBoxProps> = ({ error, wrapperClassName, title, errorMessage, ...props }) => {
     const elementId = useId();
 
     return (
-        <section>
+        <section className={clsx(styles.checkboxContainer, wrapperClassName)}>
             <input
                 className={styles.input}
                 id={elementId}
@@ -19,9 +20,9 @@ export const Checkbox: FC<CheckBoxProps> = ({ error, ...props }) => {
                 className={styles.checkboxLabel}
                 htmlFor={elementId}
             >
-                Sort by Name
+                {title}
             </label>
-            {error && <span className={styles.error}>This field is required</span>}
+            {error && errorMessage && <span className={styles.error}>{errorMessage}</span>}
         </section>
     );
 };
