@@ -21,6 +21,7 @@
         "test:unit:isolate": "VITEST_TEST_TYPE=unit-isolate TZ=Europe/Moscow yarn vitest run --coverage --isolate=true"
     },
     "dependencies": {
+        "@hookform/resolvers": "3.3.4",
         "clsx": "2.1.0",
         "lodash-es": "4.17.21",
         "react": "18.2.0",
