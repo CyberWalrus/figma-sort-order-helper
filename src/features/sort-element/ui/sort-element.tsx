@@ -10,14 +10,17 @@ import { Input } from '$shared/ui/input';
 import type { FormSchema } from '../lib/schemas';
 import { FormSortElementSchema } from '../lib/schemas';
 
-import styles from './sort-elements.module.scss';
+import styles from './sort-element.module.scss';
 
-export const SortElements: FC = () => {
+export const SortElement: FC = () => {
     const {
         register,
         handleSubmit,
         formState: { errors },
-    } = useForm<FormSchema>({ defaultValues: FormSortElementSchema.parse({}), resolver: zodResolver(FormSortElementSchema) });
+    } = useForm<FormSchema>({
+        defaultValues: FormSortElementSchema.parse({}),
+        resolver: zodResolver(FormSortElementSchema),
+    });
 
     const handleSubmitForm: SubmitHandler<FormSchema> = (data) => {
         console.log(data);
