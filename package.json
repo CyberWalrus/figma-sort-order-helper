@@ -6,8 +6,8 @@
     "type": "module",
     "scripts": {
         "start": "yarn dev",
-        "build": "tsc && vite build && yarn build:code",
-        "build:code": "esbuild lib/index.ts --bundle --outfile=dist/code.js",
+        "build": "tsc && vite build && yarn build:figma",
+        "build:figma": "esbuild figma/index.ts --bundle --outfile=dist/code.js",
         "lint": "yarn eslint:check && yarn stylelint:check && yarn ts:check",
         "lint:fix": "yarn eslint:fix && yarn stylelint:fix",
         "test": "yarn test:unit && yarn test:unit:isolate",
