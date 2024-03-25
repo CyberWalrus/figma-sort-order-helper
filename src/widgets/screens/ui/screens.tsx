@@ -1,12 +1,12 @@
 import type { FC } from 'react';
 
 import { screenStore } from '$features/screen-switcher';
-import { SortElement } from '$features/sort-element';
+import { SortElements } from '$features/sort-elements';
 
 export const Screens: FC = () => {
     const { screenId } = screenStore();
 
-    if (screenId === '2') return <SortElement />;
+    if (screenId === '2') return <SortElements />;
 
     return 'test';
 };

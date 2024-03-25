@@ -7,22 +7,22 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { Checkbox } from '$shared/ui/checkbox';
 import { Input } from '$shared/ui/input';
 
-import type { FormSortElementSchema } from '../lib/schemas';
+import type { FormSortElementsSchema } from '../lib/schemas';
 import { formSortElementSchema } from '../lib/schemas';
 
-import styles from './sort-element.module.scss';
+import styles from './sort-elements.module.scss';
 
-export const SortElement: FC = () => {
+export const SortElements: FC = () => {
     const {
         register,
         handleSubmit,
         formState: { errors },
-    } = useForm<FormSortElementSchema>({
+    } = useForm<FormSortElementsSchema>({
         defaultValues: formSortElementSchema.parse({}),
         resolver: zodResolver(formSortElementSchema),
     });
 
-    const handleSubmitForm: SubmitHandler<FormSortElementSchema> = (data) => {
+    const handleSubmitForm: SubmitHandler<FormSortElementsSchema> = (data) => {
         parent.postMessage(
             {
                 pluginMessage: {

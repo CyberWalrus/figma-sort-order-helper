@@ -7,4 +7,4 @@ export const formSortElementSchema = z.object({
     verticalPadding: z.number().min(0).default(160),
 });
 
-export type FormSortElementSchema = z.infer<typeof formSortElementSchema>;
+export type FormSortElementsSchema = z.infer<typeof formSortElementSchema>;

@@ -1,6 +1,6 @@
-import type { FormSortElementSchema } from '$features/sort-element';
+import type { FormSortElementsSchema } from '$features/sort-elements';
 
-export const sortElement = ({ elementsPerRow, horizontalPadding, verticalPadding }: FormSortElementSchema) => {
+export const sortElements = ({ elementsPerRow, horizontalPadding, verticalPadding }: FormSortElementsSchema) => {
     const { selection } = figma.currentPage;
 
     // Сортируем выделенные узлы по их названиям
