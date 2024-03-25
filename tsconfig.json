@@ -24,7 +24,7 @@
         "*.config.cjs",
         "*.config.ts",
         "__mocks__",
-        "lib"
+        "figma"
     ],
     "exclude": [
         "node_modules"

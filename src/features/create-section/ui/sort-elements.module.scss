@@ -1,0 +1,33 @@
+.formContainer {
+    padding: 20px;
+
+    color: #fff;
+
+    background-color: #333;
+    border-radius: 5px;
+}
+
+.button {
+    display: inline-block;
+    margin-bottom: 16px;
+    padding: 12px 16px;
+
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+
+    background-color: #007bff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+
+    transition: background-color 0.3s ease;
+
+    appearance: none;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
