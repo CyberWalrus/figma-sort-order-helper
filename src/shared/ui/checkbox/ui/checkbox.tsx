@@ -5,7 +5,7 @@ import type { CheckBoxProps } from './checkbox.type';
 
 import styles from './checkbox.module.scss';
 
-export const Checkbox: FC<CheckBoxProps> = ({ error, wrapperClassName, title, errorMessage, ...props }) => {
+export const Checkbox: FC<CheckBoxProps> = ({ error, wrapperClassName, title, ...props }) => {
     const elementId = useId();
 
     return (
@@ -22,7 +22,7 @@ export const Checkbox: FC<CheckBoxProps> = ({ error, wrapperClassName, title, er
             >
                 {title}
             </label>
-            {error && errorMessage && <span className={styles.error}>{errorMessage}</span>}
+            {error && error.message && <span className={styles.error}>{error.message}</span>}
         </section>
     );
 };

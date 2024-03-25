@@ -1,10 +1,11 @@
-import { type FC, useId } from 'react';
+import { forwardRef, useId } from 'react';
 
 import type { InputProps } from './input.type';
 
 import styles from './input.module.scss';
 
-export const Input: FC<InputProps> = ({ error, wrapperClassName, title, errorMessage, ...props }) => {
+export const Input = forwardRef<HTMLInputElement, InputProps>(({ error, wrapperClassName, title, ...props }, ref) => {
+    console.log(props);
     const elementId = useId();
 
     return (
@@ -12,15 +13,17 @@ export const Input: FC<InputProps> = ({ error, wrapperClassName, title, errorMes
             <label
                 className={styles.label}
                 htmlFor={elementId}
+                {...props}
             >
                 {title}
             </label>
             <input
+                ref={ref}
                 className={styles.input}
                 id={elementId}
                 {...props}
             />
-            {error && errorMessage && <span className={styles.error}>{errorMessage}</span>}
+            {error && error.message && <span className={styles.error}>{error.message}</span>}
         </section>
     );
-};
+});
