@@ -2,8 +2,8 @@ import react from '@vitejs/plugin-react-swc';
 import dotenv from 'dotenv';
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
+import { ViteMinifyPlugin } from 'vite-plugin-minify';
 import { viteSingleFile } from 'vite-plugin-singlefile';
-import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 import { envBuild } from './src/shared/api/env-build';
 
@@ -21,13 +21,7 @@ export default defineConfig({
         NODE_ENV: JSON.stringify(envBuild.NODE_ENV),
         VITE_TEST_SERVER_BUILD: JSON.stringify(envBuild.VITE_TEST_SERVER_BUILD),
     },
-    plugins: [
-        react(),
-        viteSingleFile(),
-        viteStaticCopy({
-            targets: [{ dest: '../', rename: 'ui.html', src: './dist/index.html' }],
-        }),
-    ],
+    plugins: [react(), viteSingleFile(), ViteMinifyPlugin({})],
     resolve: {
         alias: {
             $__mocks__: resolve(__dirname, './src/__mocks__'),

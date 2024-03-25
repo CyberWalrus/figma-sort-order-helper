@@ -7,8 +7,8 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { Checkbox } from '$shared/ui/checkbox';
 import { Input } from '$shared/ui/input';
 
-import type { FormSchema } from '../lib/schemas';
-import { FormSortElementSchema } from '../lib/schemas';
+import type { FormSortElementSchema } from '../lib/schemas';
+import { formSortElementSchema } from '../lib/schemas';
 
 import styles from './sort-element.module.scss';
 
@@ -17,15 +17,21 @@ export const SortElement: FC = () => {
         register,
         handleSubmit,
         formState: { errors },
-    } = useForm<FormSchema>({
-        defaultValues: FormSortElementSchema.parse({}),
-        resolver: zodResolver(FormSortElementSchema),
+    } = useForm<FormSortElementSchema>({
+        defaultValues: formSortElementSchema.parse({}),
+        resolver: zodResolver(formSortElementSchema),
     });
 
-    const handleSubmitForm: SubmitHandler<FormSchema> = (data) => {
-        console.log(data);
-
-        // Здесь обрабатываем данные формы, отправляем на сервер или в state-management
+    const handleSubmitForm: SubmitHandler<FormSortElementSchema> = (data) => {
+        parent.postMessage(
+            {
+                pluginMessage: {
+                    options: data,
+                    type: 'sort-element',
+                },
+            },
+            '*',
+        );
     };
 
     return (
