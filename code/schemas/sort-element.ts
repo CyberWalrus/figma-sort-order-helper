@@ -1,13 +1,10 @@
 import { z } from 'zod';
 
+import { FormSortElementSchema } from '$features/sort-elements';
+
 const TypeSchema = z.union([z.literal('sort-elements'), z.literal('test')]);
-const OptionsSchema = z.object({
-    elementsPerRow: z.number(),
-    horizontalPadding: z.number(),
-    verticalPadding: z.number(),
-});
 
 export const SortElementSchema = z.object({
-    options: OptionsSchema,
+    options: FormSortElementSchema,
     type: TypeSchema,
 });

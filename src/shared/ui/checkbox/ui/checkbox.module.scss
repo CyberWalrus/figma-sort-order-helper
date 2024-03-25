@@ -1,6 +1,11 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    gap: 8px;
+}
+
 .label {
     display: block;
-    margin-bottom: 8px;
 }
 
 
@@ -19,17 +24,6 @@
     border-radius: 3px;
 
     appearance: none;
-
-    &[type="number"]::-webkit-inner-spin-button,
-    &[type="number"]::-webkit-outer-spin-button {
-        margin: 0;
-
-        appearance: none;
-    }
-
-    &[type="number"] {
-        appearance: textfield;
-    }
 }
 
 
@@ -37,11 +31,11 @@
 .checkboxContainer {
     display: flex;
     align-items: center;
-    width: 20px;
-}
+    width: 100px;
 
-.checkboxLabel {
-    margin-left: 8px;
+    &:checked {
+        width: 20px;
+    }
 }
 
 .error {

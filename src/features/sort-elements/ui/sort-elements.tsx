@@ -4,10 +4,11 @@ import type { SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 
+import { Checkbox } from '$shared/ui/checkbox';
 import { Input } from '$shared/ui/input';
 
 import type { FormSchema } from '../lib/schemas';
-import { formSchema } from '../lib/schemas';
+import { FormSortElementSchema } from '../lib/schemas';
 
 import styles from './sort-elements.module.scss';
 
@@ -16,7 +17,7 @@ export const SortElements: FC = () => {
         register,
         handleSubmit,
         formState: { errors },
-    } = useForm<FormSchema>({ defaultValues: formSchema.parse({}), resolver: zodResolver(formSchema) });
+    } = useForm<FormSchema>({ defaultValues: FormSortElementSchema.parse({}), resolver: zodResolver(FormSortElementSchema) });
 
     const handleSubmitForm: SubmitHandler<FormSchema> = (data) => {
         console.log(data);
@@ -46,6 +47,11 @@ export const SortElements: FC = () => {
                 title='Vertical Padding'
                 type='number'
                 {...register('verticalPadding', { valueAsNumber: true })}
+            />
+            <Checkbox
+                error={errors.isSortByName}
+                title='Sort By Name'
+                {...register('isSortByName')}
             />
             <button
                 className={styles.button}
